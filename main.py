@@ -42,4 +42,4 @@ for word in dictionary:
             #print(response.status_code)
 
     count += 1
-    progress(count, len(dictionary), status='scanning')
+    progress(count, len(dictionary), status='scanned')
