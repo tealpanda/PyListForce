@@ -31,13 +31,15 @@ for word in dictionary:
     try:
         response = requests.get(url)
     except:
-        print(url)
-        print('Exception')
+        pass
+        #print(url)
+        #print('Exception')
 
     if (response):
         if (response.status_code != 404):
-            print(url)
-            print(response.status_code)
+            pass
+            #print(url)
+            #print(response.status_code)
 
     count += 1
     progress(count, len(dictionary), status='scanning')
