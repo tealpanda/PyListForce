@@ -1,11 +1,6 @@
 import requests
 import argparse
 
-# Todo 
-# Make it //
-# Add percentage progression
-# Add option to output result to file
-
 parser = argparse.ArgumentParser(description='Scans the target URL for potential hidden paths.')
 
 parser.add_argument('target', help="The target URL to scan.")
