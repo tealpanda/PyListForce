@@ -1,17 +1,25 @@
 import requests
+import argparse
 
 # Todo 
 # Make it //
-# Implement inputs
+# Add percentage progression
+# Add option to output result to file
 
-target = "http://34.94.3.143/23f816a954/" # To be used as input
-dictionary_file = "SVNDigger/all.txt" # To be used as input
+parser = argparse.ArgumentParser(description='Scans the target URL for potential hidden paths.')
+
+parser.add_argument('target', help="The target URL to scan.")
+parser.add_argument('--dict', default="all", help="The dictionary to use for scanning.")
+args = vars(parser.parse_args())
+
+#target = "http://34.94.3.143/23f816a954/" # To be used as input
+dictionary_file = "SVNDigger/" + args['dict'] + ".txt" # To be used as input
 
 with open(dictionary_file, 'r') as file:
     dictionary = file.readlines()
 
 for word in dictionary:
-    url = target + word.replace('\n', '')
+    url = args['target'] + word.replace('\n', '')
     response = None
     try:
         response = requests.get(url)
